@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes</title>
+    <style>
+        #circle{    
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: yellow;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px; 
+            position: absolute;
+            margin-left: 437px;
+        }
+        #circle1{
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: red;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;  
+            position: absolute;
+            margin-left: 369px;
+        }
+        #circle2{
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: orange;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            position: absolute;
+            margin-left: 403px; 
+        }
+        #circle3{
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: blue;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            position: absolute;
+            margin-top: 34px;
+            margin-left: 369px; 
+        }
+        #circle4{   
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: green;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px; 
+            position: absolute;
+            margin-top: 34px;
+            margin-left: 403px;
+        }
+        #circle5{
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            background-color: gray;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px; 
+            position: absolute;
+            margin-top: 34px;
+            margin-left: 437px;
+        }
+        #qnote{
+            background-color: transparent;
+        }
+
+        #head{
+            background: #E0E0FF;
+            width: 600px;
+            height:200px;
+            margin:auto;
+            box-shadow: 8px 8px 4px #888888;
+        }
+
+        #main{
+            background: #CCFFFF;
+            width:600px;
+            height:800px;
+            margin:auto;
+            box-shadow: 8px 8px 4px #888888;
+        }
+
+        #newdiv{
+            background: #FFFFCC;
+            white-space: pre;
+            margin:auto;
+            width :400px;
+            height: 100px;
+            margin-bottom: 50px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        #text{
+            font-size: 14px;
+            background: transparent;
+            position: absolute;
+            height: 20px;
+            width:350px;
+            margin-left: 110px;
+            margin-top: 96px;
+        }
+
+        #btn{
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            position: relative;
+            margin-left: 500px;
+            margin-top: -50px;
+        }
+
+        #imgbtn{
+            opacity: 0.4;
+            filter: alpha(opacity = 40);
+            height: 28px;
+            width: 30px; 
+            margin-left: 466px;
+            margin-top: 65px;
+         }
+
+         #imgbtn3{ 
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            height: 30px;
+            width: 30px; 
+            position: absolute;
+            margin-top: 65px;
+         }
+         #top{
+            text-align: center;
+            font-size: 28px;
+            color: white;
+            height: 30px;
+            width: 600px;
+            background-color: #FF7373;
+         }
+        </style>
+        <script type="text/javascript">function del(elem){
+            elem.parentNode.removeChild(elem);
+        }
+</script>
+
+    </style>
+</head>
+<body>
+        <div id = "head"><textarea rows="4" cols="50"id = "text" onfocus = "mybckgrd(this)" placeholder = "Add note..."></textarea>  <!--Creates a textarea to add note-->
+        <div id = "top">Make a note</div>
+        <input type = "image" id = "imgbtn" onclick = " Addnote()" src = "1433162894_Text.png"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40">  <!--Button to add note-->
+        <a href = "asd 3.html"><input type = "image" id = "imgbtn3"  src = "Actions-insert-image-icon.png"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40"  onclick="previewFile()"></a> <!--Button to add image-->
+        <div id = "circle" 
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr()"></div> <!--Bacground color-->
+        <div id = "circle1"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr1()"></div><!--Bacground color-->
+        <div id = "circle2"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr2()"></div><!--Bacground color-->
+        <div id = "circle3"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr3()"></div><!--Bacground color-->
+        <div id = "circle4"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr4()"></div><!--Bacground color-->
+        <div id = "circle5"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.3;this.filters.alpha.opacity=30" onclick = "bckgr5()"></div><!--Bacground color-->
+        <script type="text/javascript">
+        //Background color functions
+        function bckgr(){
+            newdiv.style.background = "yellow"; 
+        }
+        function bckgr1(){
+            newdiv.style.background = "red"; 
+        }
+        function bckgr2(){
+            newdiv.style.background = "orange"; 
+        }
+        function bckgr3(){
+            newdiv.style.background = "blue"; 
+        }
+        function bckgr4(){
+            newdiv.style.background = "green"; 
+        }
+        function bckgr5(){
+            newdiv.style.background = "gray"; 
+        }
+        
+        function mybckgrd(x){
+            x.style.background = "#FFFFCC";
+        }
+        </script>
+
+        <script type="text/javascript">
+        //Function to add note
+        function Addnote() {
+            var m = document.getElementById("main");
+            var d = document.createElement('div');
+            var text = document.createTextNode(document.getElementById("text").value);
+            d.appendChild(text);
+            d.setAttribute('id', "newdiv");
+            m.insertBefore(d, m.firstChild);  
+
+            var btn = document.createElement("input") ; //Function of delete button
+            btn.setAttribute("type","image");
+            btn.setAttribute("src","close33.png");
+            btn.setAttribute("alt","delete");
+            btn.setAttribute("id","btn");
+            btn.setAttribute("onmouseover", "this.style.opacity=1;this.filters.alpha.opacity=100");
+            btn.setAttribute("onmouseout", "this.style.opacity=0,3;this.filters.alpha.opacity=30");
+            btn.setAttribute("onclick","del(del(newdiv))");
+            m.appendChild(btn);
+            m.insertBefore(btn, m.firstChild);
+        }
+            </script> 
+</div>
+<div id = "main"></div>
+</body>
+</html>

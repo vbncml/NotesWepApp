@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes</title>
+    <style>
+        #qnote{
+            background-color: transparent;
+        }
+
+        #head{
+            background: #E0E0FF;
+            width: 600px;
+            height:300px;
+            margin:auto;
+            box-shadow: 8px 8px 4px #888888;
+        }
+
+        #main{
+            background: #CCFFFF;
+            width:600px;
+            height:800px;
+            margin:auto;
+            box-shadow: 8px 8px 4px #888888;
+        }
+
+        #newdiv{
+            background: #FFFFCC;
+            margin:auto;
+            width :400px;
+            height: 100px;
+            margin-bottom: 50px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        #text{
+            font-size: 14px;
+            background: transparent;
+            position: absolute;
+            height: 20px;
+            width:350px;
+            margin-left: 110px;
+            margin-top: 114px;
+        }
+
+        #btn{
+            position: absolute;
+            margin-left: 318px;
+        }
+        #img{
+            text-align: center;
+            height: 50px;
+            width: 70px;
+        }
+        #imgbtn{
+            opacity: 0.4;
+            filter: alpha(opacity = 40);
+            height: 28px;
+            width: 30px; 
+            margin-left: 466px;
+            margin-top: 65px;
+         }
+         #imgupload{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            margin-left: 250px;
+            margin-top: 100px; 
+         }
+         #uplbtn{
+            position: absolute;
+            margin-left: 250px;
+            margin-top: 225px; 
+         }
+         #top{
+            text-align: center;
+            font-size: 28px;
+            color: white;
+            height: 30px;
+            width: 600px;
+            background-color: #FF7373;
+         }
+    </style>
+</head>
+<body>
+
+        <div id = "head"><textarea rows="4" cols="50"id = "text" onfocus = "mybckgrd(this)" placeholder = "Add note..."></textarea>
+        <div id = "top">Make a note</div>
+         <input type="file" onchange="previewFile()" id="uplbtn"><br>
+        <img src=""  alt="Image preview..." id = "imgupload">
+        <input type = "image" id = "imgbtn" onclick = " Addnote()" src = "1433162894_Text.png"
+        onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100" 
+        onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40">
+        <script type="text/javascript">
+        function mybckgrd(x){
+            x.style.background = "#FFFFCC";
+        }
+        function previewFile(){
+            var preview = document.querySelector('img'); //selects the query named img
+            var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader  = new FileReader();
+
+            reader.onloadend = function () {
+            preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } 
+            
+            else {
+                preview.src = "";
+            }
+        }
+        previewFile();  
+        </script>
+
+        <script type="text/javascript">
+        function Addnote() {
+            var m = document.getElementById("main");
+            var d = document.createElement('div');
+            var text = document.createTextNode(document.getElementById("text").value);
+            d.appendChild(text);
+            d.setAttribute('id', "newdiv");
+            m.appendChild(d);
+            var text1 = 
+            var a = document.getElementById("uplbtn");
+            var b = document.createElement('div');
+            var text1 = document.getElementById(document.getElementById("uplbtn").value);
+            b.appendChild(text1);
+            b.setAttribute('id', "img");
+            m.appendChild(b);
+            
+            var btn = document.createElement("button");
+            var t = document.createTextNode("delete");
+            btn.appendChild(t);
+            btn.setAttribute("id","btn");
+            d.appendChild(btn);
+        }
+</script> 
+</div>
+<div id = "main"></div>
+</body>
+</html>
